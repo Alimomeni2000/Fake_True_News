@@ -1,10 +1,15 @@
 # [Fake_True_News](https://www.kaggle.com/datasets/clmentbisaillon/fake-and-real-news-dataset)
 
-Acknowledgements
+### 0. Introduction
 
-Ahmed H, Traore I, Saad S. “Detecting opinion spams and fake news using text classification”, Journal of Security and Privacy, Volume 1, Issue 1, Wiley, January/February 2018.
-Ahmed H, Traore I, Saad S. (2017) “Detection of Online Fake News Using N-Gram Analysis and Machine Learning Techniques. In: Traore I., Woungang I., Awad A. (eds) Intelligent, Secure, and Dependable Systems in Distributed and Cloud Environments. ISDDC 2017. Lecture Notes in Computer Science, vol 10618. Springer, Cham (pp. 127-138).
+In this notebook, we are going to be building a Neural Language Model to classify news as being fake or real. We will start off by loading in the required libraries, and importing the data. Then we will clean the data to remove any obvious differences between the fake and real articles. Finally we will adapt a pre-trained BERT model for it to be able to classify between the fake and real articles.
 
-Inspiration
 
-Can you use this data set to make an algorithm able to determine if an article is fake news or not ?
+### 1 Data
+
+The data consists of 23481 fake and 21417 real news articles (source: www.kaggle.com/datasets/clmentbisaillon/fake-and-real-news-dataset). The real articles were originally obtained by scraping articles from Reuters.com. The Fake articles were obtained from websites that were flagged by a fact-checking website (Politifact) and Wikipedia. The real articles were all published between the 13th of January 2016 and the 31th of December 2017. The fake articles were published between the 31th of March 2015 and the 19th of February 2018.
+
+
+### 2 Research Question
+
+We are mainly interested in finding out how well modern NLP models can distinguish between real and fake articles. Defining what is fake or real news can be tricky however, and we expect that our data will reflect this. Therefore, we are also interested in finding various characteristics in our fake and real articles that might lead to overfitting.
